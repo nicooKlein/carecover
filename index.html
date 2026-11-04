@@ -10,16 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FBF7F2;
+      --bg: #F6F8FC;
       --surface: #FFFFFF;
-      --ink: #1E2A2B;
-      --muted: #5B6B6C;
-      --teal: #1F5F5B;
-      --teal-dark: #164744;
-      --coral: #E8735A;
-      --coral-soft: #FCE7E1;
-      --mint: #E3F0EC;
-      --line: #E8E1D8;
+      --ink: #16233A;
+      --muted: #56637A;
+      --teal: #2E8B3F;
+      --teal-dark: #23702F;
+      --coral: #1F4FBF;
+      --coral-text: #1F4FBF;
+      --coral-soft: #E3EAFB;
+      --mint: #E6F5E7;
+      --line: #DFE5F0;
       --radius: 18px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,16 +38,17 @@
 
     header {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(251, 247, 242, 0.92);
+      background: rgba(246, 248, 252, 0.92);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
     }
     nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .logo { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.45rem; text-decoration: none; color: var(--teal); }
-    .logo span { color: var(--coral); }
+    .logo span { color: var(--coral-text); }
     .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: 0.95rem; }
     .nav-links a:hover { color: var(--teal); }
+    .nav-links a.btn-primary, .nav-links a.btn-primary:hover { color: #fff; }
 
     .btn {
       display: inline-block; text-decoration: none; font-weight: 700;
@@ -54,8 +56,9 @@
     }
     .btn:hover { transform: translateY(-2px); }
     .btn-primary { background: var(--coral); color: #fff; }
-    .btn-primary:hover { background: #d9634a; }
-    .btn-ghost { border: 2px solid var(--teal); color: var(--teal); }
+    .btn-primary:hover { background: #173C94; }
+    .btn-ghost { background: var(--teal); color: #fff; }
+    .btn-ghost:hover { background: var(--teal-dark); }
     .btn-small { padding: 10px 18px; font-size: 0.9rem; }
 
     .hero { padding: 80px 0 90px; }
@@ -65,13 +68,13 @@
       font-weight: 700; font-size: 0.85rem; padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
     }
     .hero h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); margin-bottom: 20px; }
-    .hero h1 em { font-style: normal; color: var(--coral); }
+    .hero h1 em { font-style: normal; color: var(--teal); }
     .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 520px; margin-bottom: 32px; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
     .hero-card {
       background: var(--surface); border-radius: 24px; padding: 32px;
-      box-shadow: 0 20px 50px rgba(31, 95, 91, 0.12); border: 1px solid var(--line);
+      box-shadow: 0 20px 50px rgba(46, 139, 63, 0.14); border: 1px solid var(--line);
     }
     .timeline { list-style: none; position: relative; }
     .timeline li { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; }
@@ -107,21 +110,21 @@
     .step { position: relative; padding: 32px 28px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--line); }
     .step::before {
       counter-increment: step; content: counter(step);
-      font-family: "Fraunces", serif; font-weight: 700; font-size: 2.6rem; color: var(--coral);
+      font-family: "Fraunces", serif; font-weight: 700; font-size: 2.6rem; color: var(--coral-text);
       display: block; margin-bottom: 10px;
     }
     .step h3 { font-size: 1.25rem; margin-bottom: 8px; }
     .step p { color: var(--muted); }
 
     .benefits { background: var(--teal); color: #fff; }
-    .benefits .section-head p { color: #CFE3DF; }
+    .benefits .section-head p { color: #D3EBD7; }
     .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .benefit-box { background: var(--teal-dark); border-radius: var(--radius); padding: 36px; }
     .benefit-box h3 { font-size: 1.5rem; margin-bottom: 20px; color: #fff; }
     .benefit-box ul { list-style: none; }
-    .benefit-box li { padding: 10px 0 10px 32px; position: relative; color: #E6F1EE; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .benefit-box li { padding: 10px 0 10px 32px; position: relative; color: #E8F5EA; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .benefit-box li:last-child { border-bottom: none; }
-    .benefit-box li::before { content: "✓"; position: absolute; left: 0; color: var(--coral); font-weight: 700; }
+    .benefit-box li::before { content: "✓"; position: absolute; left: 0; color: #fff; font-weight: 700; }
 
     .video-frame {
       position: relative; max-width: 820px; margin: 0 auto; aspect-ratio: 16 / 9;
@@ -141,7 +144,7 @@
     }
     summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; color: var(--coral); font-size: 1.4rem; line-height: 1; }
+    summary::after { content: "+"; color: var(--coral-text); font-size: 1.4rem; line-height: 1; }
     details[open] summary::after { content: "–"; }
     details p { margin-top: 12px; color: var(--muted); }
 
@@ -189,7 +192,7 @@
     <div class="wrap hero-grid">
       <div>
         <span class="tag">Notfall-Kinderbetreuung als Benefit</span>
-        <h1>Kind krank?<br>Betreuung in <em>2 Stunden</em>.</h1>
+        <h1>Kind krank?<br>Betreuung innerhalb von <em>2 Stunden</em>.</h1>
         <p class="lead">CareCover vermittelt geprüfte Betreuungspersonen, die kranke Kinder zu Hause betreuen – bezahlt vom Arbeitgeber. Eltern bleiben entspannt, Teams bleiben arbeitsfähig.</p>
         <div class="hero-actions">
           <a href="#termin" class="btn btn-primary">Kostenloses Erstgespräch</a>
