@@ -77,7 +77,8 @@
     .start .seite { display: grid; grid-template-columns: 7fr 5fr; gap: 72px; align-items: end; }
     .start h1 { font-size: 3.2rem; letter-spacing: -0.025em; line-height: 1; margin-bottom: 26px; }
     .start p { font-size: 1.2rem; color: var(--text-leise); max-width: 30em; margin-bottom: 32px; }
-    .knoepfe { display: flex; gap: 12px; flex-wrap: wrap; }
+    .knoepfe { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
+    .textlink { font-weight: 600; color: var(--gruen); text-underline-offset: 4px; }
 
     .morgen { background: var(--gruen); color: #fff; padding: 30px 32px 14px; border-radius: 4px; }
     .morgen h2 { font-size: 1.05rem; font-family: "Figtree", Arial, sans-serif; font-weight: 500; letter-spacing: 0; opacity: 0.85; margin-bottom: 10px; }
@@ -97,8 +98,11 @@
     .abschnitt > .seite > h2 { margin-bottom: 14px; }
     .einleitung { font-size: 1.12rem; color: var(--text-leise); max-width: 36em; margin-bottom: 46px; }
 
-    .problem { border-top: 1px solid var(--linie); }
-    .spalten { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .problem { border-top: 1px solid var(--linie); padding: 64px 0 72px; }
+    .ablauf { padding: 96px 0 104px; }
+    .video { padding: 72px 0 80px; }
+    .termin { padding: 60px 0; }
+    .spalten { display: grid; grid-template-columns: 1fr 1fr; max-width: 920px; }
     .spalten div { padding: 4px 32px 4px 0; }
     .spalten div + div { padding-left: 32px; border-left: 1px solid var(--linie); }
     .spalten h3 { margin-bottom: 10px; }
@@ -106,27 +110,22 @@
 
     .ablauf { background: var(--gruen-hell); }
     .schritte { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; list-style: none; }
-    .schritte li { border-top: 3px solid var(--gruen); padding-top: 18px; }
     .schritte h3 { margin-bottom: 8px; }
     .schritte p { color: var(--text-leise); }
 
     .vorteile .seite { display: grid; grid-template-columns: 4fr 4fr 4fr; gap: 56px; }
     .vorteile .titel p { color: var(--text-leise); margin-top: 14px; font-size: 1.12rem; }
-    .vorteile h3 { font-size: 1.35rem; padding-bottom: 14px; border-bottom: 3px solid var(--text); }
+    .vorteile h3 { font-size: 1.35rem; padding-bottom: 6px; }
     .vorteile ul { list-style: none; }
     .vorteile li { padding: 13px 0; border-bottom: 1px solid var(--linie); }
 
     .video { background: var(--text); color: #fff; }
-    .video .seite { display: grid; grid-template-columns: 8fr 4fr; gap: 56px; align-items: start; }
+    .video .rahmen { max-width: 860px; }
+    .video .titel { margin-bottom: 28px; }
     .video h2 { margin-bottom: 12px; }
-    .video .titel { grid-column: 1 / -1; }
     .video .titel p { opacity: 0.75; font-size: 1.12rem; }
     .rahmen { position: relative; aspect-ratio: 16 / 9; background: #000; }
     .rahmen iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-    .fakten div { padding: 15px 0; border-top: 1px solid rgba(255, 255, 255, 0.25); }
-    .fakten div:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
-    .fakten dt { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
-    .fakten dd { opacity: 0.75; font-size: 0.97rem; }
 
     .fragen .seite { display: grid; grid-template-columns: 4fr 8fr; gap: 56px; }
     details { border-top: 1px solid var(--linie); }
@@ -168,7 +167,7 @@
       h2 { font-size: 1.75rem; }
       .menue li:not(:last-child) { display: none; }
       .start { padding: 48px 0 60px; }
-      .start .seite, .vorteile .seite, .video .seite, .fragen .seite, .termin .seite { grid-template-columns: 1fr; gap: 36px; }
+      .start .seite, .vorteile .seite, .fragen .seite, .termin .seite { grid-template-columns: 1fr; gap: 36px; }
       .start h1 { font-size: 2.3rem; }
       .abschnitt { padding: 60px 0; }
       .spalten, .schritte { grid-template-columns: 1fr; gap: 0; }
@@ -207,7 +206,7 @@
           <p>CareCover vermittelt geprüfte Betreuungspersonen, die kranke Kinder zu Hause betreuen. Die Kosten übernimmt der Arbeitgeber, und Eltern müssen dafür keinen Urlaub oder Kinderkrankentag nehmen.</p>
           <div class="knoepfe">
             <a href="#termin" class="knopf">Kostenloses Erstgespräch</a>
-            <a href="#video" class="knopf gruen">Video ansehen</a>
+            <a href="#video" class="textlink">Pitch-Video ansehen</a>
           </div>
         </div>
 
@@ -225,20 +224,16 @@
 
     <section class="abschnitt problem">
       <div class="seite">
-        <h2>Das Problem kennt jede berufstätige Familie</h2>
-        <p class="einleitung">Wenn ein Kind krank wird, darf es nicht in die Kita oder Schule. Das passiert meist ohne Vorwarnung.</p>
+        <h2>Wenn das Kind morgens Fieber hat</h2>
+        <p class="einleitung">Ein krankes Kind darf nicht in die Kita oder Schule. Meist erfahren Eltern das erst am selben Morgen.</p>
         <div class="spalten">
           <div>
-            <h3>Kurzfristiger Ausfall</h3>
-            <p>Eltern erfahren morgens, dass sie zu Hause bleiben müssen. Meetings, Schichten und Termine platzen.</p>
+            <h3>Für Eltern</h3>
+            <p>Termine und Schichten fallen kurzfristig aus. Großeltern wohnen oft weit weg oder arbeiten selbst, und spontane Hilfe ist kaum zu finden.</p>
           </div>
           <div>
-            <h3>Kein Netzwerk vor Ort</h3>
-            <p>Großeltern wohnen weit weg oder sind selbst berufstätig. Spontane Hilfe ist kaum zu finden.</p>
-          </div>
-          <div>
-            <h3>Kosten für Unternehmen</h3>
-            <p>Jeder ungeplante Fehltag bedeutet Mehrarbeit für das Team und Produktivitätsverlust für den Betrieb.</p>
+            <h3>Für Arbeitgeber</h3>
+            <p>Jeder ungeplante Fehltag bedeutet Mehrarbeit im Team. Bei Kolleginnen und Kollegen mit kleinen Kindern passiert das mehrmals im Jahr.</p>
           </div>
         </div>
       </div>
@@ -272,8 +267,8 @@
     <section class="abschnitt vorteile" id="vorteile">
       <div class="seite">
         <div class="titel">
-          <h2>Gewinn für beide Seiten</h2>
-          <p>CareCover ist ein Mitarbeiter-Benefit, der wirklich im Alltag hilft.</p>
+          <h2>Was Arbeitgeber und Eltern davon haben</h2>
+          <p>Der Arbeitgeber bucht ein Stundenkontingent, die Mitarbeitenden rufen es bei Bedarf ab.</p>
         </div>
         <div>
           <h3>Für Arbeitgeber</h3>
@@ -300,17 +295,11 @@
       <div class="seite">
         <div class="titel">
           <h2>CareCover in 45 Sekunden</h2>
-          <p>Unser Pitch-Video zeigt, wie CareCover funktioniert.</p>
+          <p>Das Pitch-Video zeigt einen Morgen, an dem das Kind krank ist, und wie CareCover dann hilft.</p>
         </div>
         <div class="rahmen">
           <iframe src="https://www.youtube.com/embed/VIDEO-ID" title="CareCover Pitch-Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <dl class="fakten">
-          <div><dt>2 Stunden</dt><dd>bis die Betreuung vor Ort ist</dd></div>
-          <div><dt>100 %</dt><dd>geprüfte Betreuungspersonen</dd></div>
-          <div><dt>0 €</dt><dd>Kosten für Eltern</dd></div>
-          <div><dt>1 App</dt><dd>für Anfrage, Profil und Abrechnung</dd></div>
-        </dl>
       </div>
     </section>
 
@@ -336,7 +325,7 @@
           </details>
           <details>
             <summary>Wie wird mein Unternehmen Partner?</summary>
-            <p>Buchen Sie einfach ein kostenloses Erstgespräch. Wir stellen Ihnen CareCover vor und erstellen ein passendes Angebot.</p>
+            <p>Buchen Sie ein kostenloses Erstgespräch. Wir stellen Ihnen CareCover vor und erstellen ein passendes Angebot.</p>
           </details>
         </div>
       </div>
@@ -345,10 +334,10 @@
     <section class="abschnitt termin" id="termin">
       <div class="seite">
         <div>
-          <h2>Bereit für weniger Ausfalltage?</h2>
-          <p>Buchen Sie ein kostenloses, unverbindliches Erstgespräch mit unserem Team und erfahren Sie, wie CareCover in Ihrem Unternehmen funktioniert.</p>
+          <h2>30 Minuten Erstgespräch für Arbeitgeber</h2>
+          <p>Im Gespräch klären wir, wie viele Betreuungsstunden zu Ihrer Belegschaft passen und was das kostet. Das Gespräch ist kostenlos.</p>
         </div>
-        <a href="https://calendly.com/nicoklein2202/30min" target="_blank" rel="noopener" class="knopf">Jetzt Termin buchen</a>
+        <a href="https://calendly.com/nicoklein2202/30min" target="_blank" rel="noopener" class="knopf">Termin buchen</a>
       </div>
     </section>
   </main>
