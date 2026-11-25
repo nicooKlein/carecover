@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CareCover | Notfall-Kinderbetreuung über den Arbeitgeber</title>
   <meta name="description" content="CareCover: Wenn das Kind krank ist, kommt innerhalb von 2 Stunden eine geprüfte Betreuungsperson nach Hause. Die Kosten trägt der Arbeitgeber.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20112%20112%22%3E%3Cpath%20d%3D%22M94.11%2C34.00%20A44%2C44%200%201%201%2056.00%2C12.00%22%20fill%3D%22none%22%20stroke%3D%22%231E6B3C%22%20stroke-width%3D%2214%22/%3E%3Cline%20x1%3D%2256%22%20y1%3D%2256%22%20x2%3D%2281.98%22%20y2%3D%2241.00%22%20stroke%3D%22%2314201B%22%20stroke-width%3D%229%22%20stroke-linecap%3D%22round%22/%3E%3Cline%20x1%3D%2256%22%20y1%3D%2256%22%20x2%3D%2256%22%20y2%3D%2230%22%20stroke%3D%22%2314201B%22%20stroke-width%3D%229%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --gruen: #1E6B3C;
@@ -31,7 +32,7 @@
     }
 
     h1, h2, h3 {
-      font-family: "Bricolage Grotesque", "Figtree", Arial, sans-serif;
+      font-family: "IBM Plex Sans", "Figtree", Arial, sans-serif;
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: -0.01em;
@@ -48,11 +49,14 @@
     .kopf { border-bottom: 1px solid var(--linie); }
     .kopf .seite { display: flex; align-items: center; justify-content: space-between; height: 72px; }
     .logo {
-      font-family: "Bricolage Grotesque", Arial, sans-serif;
-      font-weight: 700;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-weight: 600;
       font-size: 1.4rem;
-      color: var(--gruen);
+      color: var(--text);
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
     .menue { display: flex; align-items: center; gap: 30px; list-style: none; }
     .menue a { text-decoration: none; font-size: 0.95rem; font-weight: 500; }
@@ -85,7 +89,7 @@
     .morgen ol { list-style: none; }
     .morgen li { display: grid; grid-template-columns: 4.2rem 1fr; padding: 16px 0; border-top: 1px solid rgba(255, 255, 255, 0.25); }
     .morgen time {
-      font-family: "Bricolage Grotesque", Arial, sans-serif;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
       font-size: 1.35rem;
       font-weight: 700;
       font-variant-numeric: tabular-nums;
@@ -187,7 +191,7 @@
 
   <header class="kopf">
     <div class="seite">
-      <a href="#" class="logo">CareCover</a>
+      <a href="#" class="logo"><svg class="logo-zeichen" width="30" height="30" viewBox="0 0 112 112" aria-hidden="true"><path d="M94.11,34.00 A44,44 0 1 1 56.00,12.00" fill="none" stroke="#1E6B3C" stroke-width="14"/><line x1="56" y1="56" x2="81.98" y2="41.00" stroke="#14201B" stroke-width="9" stroke-linecap="round"/><line x1="56" y1="56" x2="56" y2="30" stroke="#14201B" stroke-width="9" stroke-linecap="round"/></svg><span>CareCover</span></a>
       <ul class="menue">
         <li><a href="#ablauf">So funktioniert's</a></li>
         <li><a href="#vorteile">Vorteile</a></li>
