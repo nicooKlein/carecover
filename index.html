@@ -75,7 +75,7 @@
 
     .start { padding: 76px 0 88px; }
     .start .seite { display: grid; grid-template-columns: 7fr 5fr; gap: 72px; align-items: end; }
-    .start h1 { font-size: 4rem; letter-spacing: -0.025em; line-height: 1; margin-bottom: 26px; }
+    .start h1 { font-size: 3.2rem; letter-spacing: -0.025em; line-height: 1; margin-bottom: 26px; }
     .start p { font-size: 1.2rem; color: var(--text-leise); max-width: 30em; margin-bottom: 32px; }
     .knoepfe { display: flex; gap: 12px; flex-wrap: wrap; }
 
@@ -105,18 +105,8 @@
     .spalten p { color: var(--text-leise); }
 
     .ablauf { background: var(--gruen-hell); }
-    .schritte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; list-style: none; counter-reset: schritt; }
-    .schritte li { counter-increment: schritt; border-top: 3px solid var(--gruen); padding-top: 18px; }
-    .schritte li::before {
-      content: counter(schritt);
-      display: block;
-      font-family: "Bricolage Grotesque", Arial, sans-serif;
-      font-size: 3.4rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--gruen);
-      margin-bottom: 14px;
-    }
+    .schritte { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; list-style: none; }
+    .schritte li { border-top: 3px solid var(--gruen); padding-top: 18px; }
     .schritte h3 { margin-bottom: 8px; }
     .schritte p { color: var(--text-leise); }
 
@@ -179,7 +169,7 @@
       .menue li:not(:last-child) { display: none; }
       .start { padding: 48px 0 60px; }
       .start .seite, .vorteile .seite, .video .seite, .fragen .seite, .termin .seite { grid-template-columns: 1fr; gap: 36px; }
-      .start h1 { font-size: 2.7rem; }
+      .start h1 { font-size: 2.3rem; }
       .abschnitt { padding: 60px 0; }
       .spalten, .schritte { grid-template-columns: 1fr; gap: 0; }
       .spalten div, .spalten div + div { padding: 20px 0; border-left: 0; border-top: 1px solid var(--linie); }
@@ -189,7 +179,7 @@
 
     @media (max-width: 480px) {
       .seite { padding: 0 18px; }
-      .start h1 { font-size: 2.25rem; }
+      .start h1 { font-size: 1.9rem; }
       .morgen { padding: 24px 22px 8px; }
     }
   </style>
@@ -213,7 +203,7 @@
     <section class="start">
       <div class="seite">
         <div>
-          <h1>Kind krank? Betreuung innerhalb von 2&nbsp;Stunden.</h1>
+          <h1>Wenn Ihr Kind krank ist, kommt in 2&nbsp;Stunden eine Betreuung nach Hause.</h1>
           <p>CareCover vermittelt geprüfte Betreuungspersonen, die kranke Kinder zu Hause betreuen. Die Kosten übernimmt der Arbeitgeber. Eltern bleiben entspannt, Teams bleiben arbeitsfähig.</p>
           <div class="knoepfe">
             <a href="#termin" class="knopf">Kostenloses Erstgespräch</a>
@@ -257,21 +247,25 @@
     <section class="abschnitt ablauf" id="ablauf">
       <div class="seite">
         <h2>So funktioniert CareCover</h2>
-        <p class="einleitung">In drei Schritten vom kranken Kind zum normalen Arbeitstag.</p>
-        <ol class="schritte">
+        <p class="einleitung">Eltern fragen morgens per App an, der Arbeitgeber erhält am Monatsende die Abrechnung.</p>
+        <ul class="schritte">
           <li>
             <h3>Anfragen</h3>
-            <p>Eltern melden in der CareCover-App kurz Bedarf, Uhrzeit und Symptome des Kindes.</p>
+            <p>Eltern geben in der CareCover-App an, ab wann sie Betreuung brauchen und welche Symptome das Kind hat.</p>
           </li>
           <li>
-            <h3>Vermitteln</h3>
-            <p>Wir vermitteln eine geprüfte Betreuungsperson aus der Nähe. Sie hat einen Erste-Hilfe-Kurs am Kind absolviert und ein Führungszeugnis vorgelegt.</p>
+            <h3>Zusage erhalten</h3>
+            <p>Eine geprüfte Betreuungsperson aus der Nähe sagt zu. Ihr Profil mit Qualifikation und Führungszeugnis ist vorab in der App sichtbar.</p>
           </li>
           <li>
-            <h3>Betreuen</h3>
-            <p>Innerhalb von 2 Stunden ist die Betreuung vor Ort. Abgerechnet wird direkt mit dem Arbeitgeber.</p>
+            <h3>Übergabe zu Hause</h3>
+            <p>Innerhalb von 2 Stunden ist die Betreuungsperson da. Eltern erklären kurz Medikamente, Essen und Notfallnummern und gehen zur Arbeit.</p>
           </li>
-        </ol>
+          <li>
+            <h3>Abrechnung</h3>
+            <p>Die Stunden laufen über das Kontingent des Arbeitgebers. Eltern zahlen nichts.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
